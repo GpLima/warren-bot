@@ -1,13 +1,15 @@
-<ul class="messages">
-  <li class="message" *ngFor="let mesagem of mensagens"> {{mesagem.value}}</li>
+<ul class="direct-chat-text right">
+  <li class="direct-chat-text left" *ngFor="let mesagem of mensagens"> {{mesagem.value}}</li>
 </ul>
+
+
 <div class="buttons" *ngIf="buttons.length == 0">
-  <input class="message_input" type="text" [(ngModel)]="menssagem" size="40"/>
-  <button (click)="enviar(menssagem, menssagem)"> Responder</button>
+  <input class="text-black" type="text" [(ngModel)]="menssagem" size="40"/>
+  <button class="btn btn-success" (click)="enviar(menssagem, menssagem)"> Responder</button>
 </div>
-<button class="buttons" (click)="enviar(button.value, button.label.title)" *ngFor="let button of buttons">
+<button class="btn btn-danger" (click)="enviar(button.value, button.label.title)" *ngFor="let button of buttons">
   {{button.label.title}}
 </button>
 <a href="https://oiwarren.com/app/#/profile/{{profile}}" target="_blank" *ngIf="profile">
-  <button>Perfil</button>
+  <button class="btn btn-info">Perfil</button>
 </a>
